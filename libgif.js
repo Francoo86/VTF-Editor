@@ -536,7 +536,7 @@
                         width = canvas.width / get_canvas_scale();
                     }
                     //some debugging, draw rect around viewport
-                    if (false) {
+                    if (true) {
                         if (!ctx_scaled) {
                             var l = options.vp_l, t = options.vp_t;
                             var w = options.vp_w, h = options.vp_h;

@@ -532,8 +532,8 @@ function convertPixels(canvas, fwidth, fheight) {
 			if (strip == workerCount - 1)
 				stripHeight = columnHeight - stripStart;
 
-			var pix = mipmaps[canvas].getContext("2d").getImageData(mipmaps[canvas].width/2/getFrameColumns() - fwidth/2+d*fwidth, stripStart, fwidth, stripHeight);
-		
+			var pix = mipmaps[canvas].getContext("2d", { willReadFrequently: true }).getImageData(mipmaps[canvas].width/2/getFrameColumns() - fwidth/2+d*fwidth, stripStart, fwidth, stripHeight);
+
 			convertWorkersLeft += 1;
 			if (convertWorkers.length <= strip)
 				convertWorkers.push(new Worker("./convert.js"));
